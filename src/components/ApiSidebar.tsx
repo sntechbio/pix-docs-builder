@@ -18,7 +18,7 @@ export const ApiSidebar = ({ activeEndpoint, onEndpointSelect }: ApiSidebarProps
   const categories = Array.from(new Set(endpoints.map(e => e.category)));
 
   return (
-    <aside className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 border-r border-border bg-sidebar overflow-y-auto">
+    <aside className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-96 border-r border-border bg-sidebar overflow-y-auto">
       <div className="p-6">
         <h2 className="mb-4 text-sm font-semibold text-sidebar-foreground">Endpoints</h2>
         <nav className="space-y-6">

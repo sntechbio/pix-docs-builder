@@ -17,7 +17,7 @@ const Index = () => {
           activeEndpoint={activeEndpoint} 
           onEndpointSelect={setActiveEndpoint}
         />
-        <main className="ml-72 flex-1 p-8 pt-8">
+        <main className="ml-96 flex-1 p-8 pt-8">
           <div className="max-w-4xl">
             {currentEndpoint && <EndpointDetail endpoint={currentEndpoint} />}
           </div>
