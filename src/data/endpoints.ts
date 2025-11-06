@@ -2,48 +2,8 @@ import { Endpoint } from "@/types/api";
 
 export const endpoints: Endpoint[] = [
   {
-    id: "create-token",
-    title: "Criar Token (PDV)",
-    method: "POST",
-    path: "/portal/token",
-    description: "Gera um token JWT para autenticação das requisições realizadas pelo PDV. O token deve ser utilizado no cabeçalho Authorization das chamadas à API.",
-    category: "Autenticação",
-    requestBody: {
-      contentType: "application/json",
-      fields: [
-        {
-          name: "client_email",
-          type: "string",
-          required: true,
-          description: "E-mail do cliente cadastrado no portal LC PAY"
-        },
-        {
-          name: "client_password",
-          type: "string",
-          required: true,
-          description: "Senha de acesso ao portal LC PAY"
-        }
-      ],
-      example: JSON.stringify({
-        client_email: "lnascimentodesouza@gmail.com",
-        client_password: "!lcpay102030"
-      }, null, 2)
-    },
-    responses: [
-      {
-        status: 200,
-        description: "Token gerado com sucesso",
-        example: JSON.stringify({
-          access_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-          token_type: "Bearer",
-          expires_in: 86400
-        }, null, 2)
-      }
-    ]
-  },
-  {
     id: "create-payment",
-    title: "Criar Intenção de Pagamento (PIX Dinâmico)",
+    title: "Criar intenção de pagamento (PIX Dinâmico)",
     method: "POST",
     path: "/api/v2/movimentacao/{accountId}/pixCashIn",
     description: "Cria uma nova intenção de pagamento PIX dinâmico, retornando os dados do QR Code (imagem Base64 e código copia e cola).",
@@ -116,7 +76,7 @@ export const endpoints: Endpoint[] = [
   },
   {
     id: "check-status",
-    title: "Consultar Status da Transação",
+    title: "Consultar status da transação",
     method: "GET",
     path: "/api/accounts/{accountId}/consultarTransactions/{transactionId}",
     description: "Consulta o status atual de uma transação PIX previamente criada.",
@@ -201,10 +161,24 @@ export const endpoints: Endpoint[] = [
           type: "number",
           required: false,
           description: "Valor da devolução. Se omitido, devolve o valor total da transação."
+        },
+        {
+          name: "externalIdentifier",
+          type: "string",
+          required: false,
+          description: "Identificador externo controlado pelo cliente."
+        },
+        {
+          name: "returnReasonCode",
+          type: "string",
+          required: false,
+          description: "Código razão controlado pelo banco central (Devolução de pagamento instantâneo solicitado pelo usuário recebedor)."
         }
       ],
       example: JSON.stringify({
-        amount: 50.0
+        externalIdentifier: "d81540e9-e579-4352-9b98-00552cb39164",
+        amount: 50.0,
+        returnReasonCode: "MD06"
       }, null, 2)
     },
     responses: [
@@ -212,8 +186,9 @@ export const endpoints: Endpoint[] = [
         status: 200,
         description: "Devolução realizada com sucesso",
         example: JSON.stringify({
-          message: "Refund processado com sucesso",
-          refundStatus: "COMPLETED"
+          data: {
+            transactionId: "6FA62ACC-E448-D51D-C3AA-9D4EA2BDCEA0"
+          }
         }, null, 2)
       }
     ]
