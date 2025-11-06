@@ -22,7 +22,7 @@ export const ApiDocHeader = () => {
 
           <Button onClick={() => setTokenDialogOpen(true)} className="gap-2">
             <KeyRound className="h-4 w-4" />
-            Gerar Token PDV
+            Como Gerar Token PDV
           </Button>
         </div>
       </header>
