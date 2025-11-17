@@ -139,12 +139,18 @@ export const endpoints: Endpoint[] = [
             conteudo: "Cobrança referente à atualização e suporte premium.",
           },
           pagador: {
-            cpfCnpj: "55738203000171",
-            nomePagador: "Softmax Soluções Digitais LTDA",
-            logradouro: "Avenida Brasil, 455",
-            cidade: "Curitiba",
-            uf: "PR",
-            cep: "80030010",
+            cpfCnpj: "40.185.574/0001-04",
+            razaoSocial: "DataLink Consultoria em Tecnologia LTDA",
+            nomeFantasia: "DataLink Tech",
+            segmento: "Consultoria em TI",
+            email: "financeiro@datalinktech.com.br",
+            telefoneCelular: "+55 11 99125-8843",
+            nomePagador: "DataLink Consultoria em Tecnologia LTDA",
+            logradouro: "Rua Funchal, 241",
+            cidade: "São Paulo",
+            bairro: "Vila Olímpia",
+            uf: "SP",
+            cep: "04551060",
           },
           regrasCobranca: {
             juros: 0.9,
@@ -193,10 +199,8 @@ export const endpoints: Endpoint[] = [
                 },
                 outrasInformacoes:
                   "Cobrança referente à atualização e suporte premium do sistema LC Pay.",
-                qrcode: {
-                  imagemBase64: "iVBORw0KGgoAAAANSUhEggg==",
-                  pixCopiaECola:
-                    "00020101021226990014br.gov.bcb.pix2577pix-h.bpp.com.br/23114447/qrs2/v2/cobv/02HeBQeG6joXHJIZgoOLWHCdODe2Ch7QIRJXYJ5204000053039865406500.905802BR5923Leandro de S Nascimento6010MAE DO RIO62070503***630430E5",
+                documento: {
+                  link: "http://api-hml/api/v2/movimentacao/download/inv_7ecbf13b-0efe-4d8e-ae8f-f7f352de32539.pdf"
                 },
               },
             },
