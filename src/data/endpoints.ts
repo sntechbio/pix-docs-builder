@@ -493,4 +493,45 @@ export const endpoints: Endpoint[] = [
       },
     ],
   },
+  {
+    id: "webhook-dispatch",
+    title: "Acionar Webhook (Somente Headers)",
+    method: "POST",
+    path: "https://api.exemplo.com/webhook",
+    description:
+      "Exemplo de notificação de pagamento PIX enviada para o endpoint de webhook configurado.",
+    category: "Webhooks",
+    parameters: [
+      {
+        name: "webhook-transaction-id",
+        type: "string",
+        required: true,
+        description: "Identificador da transação enviada na notificação.",
+      },
+      {
+        name: "webhook-external-code",
+        type: "string",
+        required: true,
+        description: "Código externo que referencia a operação do cliente.",
+      },
+      {
+        name: "webhook-event-type",
+        type: "string",
+        required: true,
+        description: "Tipo do evento enviado (ex.: pix.payment).",
+      },
+    ],
+    requestBody: {
+      contentType: "application/json",
+      fields: [],
+      example: JSON.stringify({}, null, 2),
+    },
+    responses: [
+      {
+        status: 200,
+        description: "Webhook recebeu os dados com sucesso.",
+        example: JSON.stringify({}, null, 2),
+      },
+    ],
+  },
 ];
