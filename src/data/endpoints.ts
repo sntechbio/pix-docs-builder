@@ -345,4 +345,152 @@ export const endpoints: Endpoint[] = [
       },
     ],
   },
+  {
+    id: "webhook-setup",
+    title: "Configurar Webhook para Notificações",
+    method: "POST",
+    path: "/api/webhook/endpoints",
+    description:
+      "Configura um webhook para receber notificações sobre eventos relacionados a transações PIX.",
+    category: "Webhooks",
+    parameters: [
+      {
+        name: "Authorization",
+        type: "string",
+        required: true,
+        description: "Bearer token (Access Token PDV)",
+      },
+    ],
+    requestBody: {
+      contentType: "application/json",
+      fields: [
+        {
+          name: "urlProd",
+          type: "string",
+          required: true,
+          description: "URL de produção do endpoint onde as notificações serão enviadas.",
+        },
+        {
+          name: "urlHml",
+          type: "string",
+          required: true,
+          description: "URL de homologação do endpoint onde as notificações serão enviadas.",
+        },
+        {
+          name: "accountId",
+          type: "string",
+          required: true,
+          description: "Identificador único da conta para a qual o webhook será configurado.",
+        },
+      ],
+      example: JSON.stringify(
+        {
+          urlProd: "https://minhaapi.com/webhook/pix",
+          urlHml: "https://minhaapi.com/webhook/pix-hml",
+          accountId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        },
+        null,
+        2
+      ),
+    },
+    responses: [
+      {
+        status: 201,
+        description: "Webhook configurado com sucesso",
+        example: JSON.stringify(
+          {},
+          null,
+          0
+        ),
+      },
+    ],
+  },
+  {
+    id: "webhook-setup-list",
+    title: "Listar Webhooks Configurados",
+    method: "GET",
+    path: "/api/webhook/endpoints",
+    description:
+      "Recupera a lista de webhooks configurados para receber notificações sobre eventos relacionados a transações PIX.",
+    category: "Webhooks",
+    parameters: [
+      {
+        name: "Authorization",
+        type: "string",
+        required: true,
+        description: "Bearer token (Access Token PDV)",
+      },
+    ],
+    requestBody: {
+      contentType: "application/json",
+      fields: [],
+      example: JSON.stringify(
+        {},
+        null,
+        2
+      ),
+    },
+    responses: [
+      {
+        status: 200,
+        description: "Lista de webhooks configurados recuperada com sucesso",
+        example: JSON.stringify(
+          [
+            {
+              accountId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+              urlHml: "https://minhaapi.com/webhook/pix-hml",
+              urlProd: "https://minhaapi.com/webhook/pix",
+            }
+          ],
+          null,
+          2
+        ),
+      },
+    ],
+  },
+  {
+    id: "webhook-setup-delete",
+    title: "Deletar Webhooks Configurados",
+    method: "DELETE",
+    path: "/api/webhook/endpoints/{accountId}",
+    description:
+      "Deleta um webhook configurado (inativar).",
+    category: "Webhooks",
+    parameters: [
+      {
+        name: "Authorization",
+        type: "string",
+        required: true,
+        description: "Bearer token (Access Token PDV)",
+      },
+      {
+        name: "accountId",
+        type: "string",
+        required: true,
+        description: "Identificador único da conta para a qual o webhook será configurado (parâmetro da url).",
+      },
+    ],
+    requestBody: {
+      contentType: "application/json",
+      fields: [],
+      example: JSON.stringify(
+        {},
+        null,
+        2
+      ),
+    },
+    responses: [
+      {
+        status: 200,
+        description: "Webhook deletado com sucesso",
+        example: JSON.stringify(
+          [
+            
+          ],
+          null,
+          2
+        ),
+      },
+    ],
+  },
 ];
