@@ -534,4 +534,65 @@ export const endpoints: Endpoint[] = [
       },
     ],
   },
+  {
+    id: "reemissao-cobrancas-pdf",
+    title: "Reemissão de Cobranças PDF",
+    method: "POST",
+    path: "/api/v2/cobranca-cliente-final/{accountId}/reemissao-pix-cobranca",
+    description:
+      "Reemite o PDF de cobranças PIX existentes, gerando novos documentos para download.",
+    category: "Pagamentos",
+    parameters: [
+      {
+        name: "Authorization",
+        type: "string",
+        required: true,
+        description: "Bearer token (Access Token PDV)",
+      },
+      {
+        name: "accountId",
+        type: "string",
+        required: true,
+        description: "Identificador único da conta do beneficiário.",
+      },
+    ],
+    requestBody: {
+      contentType: "application/json",
+      fields: [
+        {
+          name: "movimentacaoIds",
+          type: "array",
+          required: true,
+          description: "Lista de IDs das movimentações para reemissão do PDF.",
+        },
+      ],
+      example: JSON.stringify(
+        {
+          movimentacaoIds: [1949],
+        },
+        null,
+        2
+      ),
+    },
+    responses: [
+      {
+        status: 200,
+        description: "PDFs reemitidos com sucesso",
+        example: JSON.stringify(
+          {
+            data: {
+              documentos: [
+                {
+                  movimentacaoId: 1949,
+                  link: "http://api/api/v2/movimentacao/download/inv_example.pdf",
+                },
+              ],
+            },
+          },
+          null,
+          2
+        ),
+      },
+    ],
+  },
 ];
