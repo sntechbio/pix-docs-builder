@@ -178,6 +178,10 @@ export const endpoints: Endpoint[] = [
                 pagador: "Softmax Soluções Digitais LTDA",
                 numeroParcela: 1,
                 totalParcelas: 3,
+                juros: 1.0,
+                multa: 2.0,
+                tipoMulta: "PERCENTUAL",
+                frequenciaCobranca: "MENSAL",
               },
               pagamentoPix: {
                 transacaoId: "C6AAE15F-1617-28BA-BE82-84C95C2470C7",
@@ -199,6 +203,7 @@ export const endpoints: Endpoint[] = [
                 },
                 outrasInformacoes:
                   "Cobrança referente à atualização e suporte premium do sistema LC Pay.",
+                email: "financeiro@datalinktech.com.br",
                 documento: {
                   link: "http://api-hml/api/v2/movimentacao/download/inv_7ecbf13b-0efe-4d8e-ae8f-f7f352de32539.pdf"
                 },
