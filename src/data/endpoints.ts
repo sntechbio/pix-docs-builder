@@ -254,7 +254,7 @@ export const endpoints: Endpoint[] = [
                 {
                   transactionId: "9D8DFD79-EE0B-A54A-0635-D59F5843A055",
                   transactionType: "PaymentInstantPayment",
-                  transactionStatus: ["APPROVED", "OPEN"],
+                  transactionStatus: ["APPROVED", "CREATED"],
                   totalAmount: 100,
                   paidAmount: 100,
                   transactionDate: "2025-07-18T08:56:05.866-03:00",
