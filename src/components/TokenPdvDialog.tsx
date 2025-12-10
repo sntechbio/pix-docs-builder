@@ -51,7 +51,7 @@ export const TokenPdvDialog = ({ open, onOpenChange }: TokenPdvDialogProps) => {
               <div className="space-y-2">
                 <Label className="text-xs font-bold">Token PDV:</Label>
                 <code className="block rounded bg-code-background px-3 py-2 text-sm text-code-foreground font-mono break-all">
-                  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDQUlYQV8xXzVEQUE0RURGLTdCNTktREMxQS05MDlBLUQwQjMwMUEyRjhEQ18yVFF2RyIsIxODo4MDgyIiwiZXhwIjoxODk4MTg4MzgxLCJpYXQiOjE3NDA0MDAzODEsImF1dGhvcml0aWVzIjpbIlJPTEVfUERWIiwiVVNVQVJJT19OT1ZPIiwiVVNVQVJJT19MSVNUQVIiLCJVU1VBUklPX0VESVRBUiIsIlVTVUFSSU9fREVMRVRBUiJdfQ.TkZSV_LoEuXtF77YdhsiqsWkolZpDE48zqS6sOYWa9w
+                  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDQUlYQV8xXzVEQUE0RURGLTdCNTktREMxQS05MDlBLUQwQjMwMUEyRjhEQ18yVFF2RyIsIxODo4MDgyIiwiZXhwIjoxODk4MTg4MzgxLCJpYXQiOjE3NDA0MDAzODEsImF1dGhvcml0aWVzIjpbIlJPTEVfUERWIiwiVVNVQVJJT19OT1ZPIiwiVVNVQVJJT19MSVNUQVIiLCJVU1VBUklPX0VESViJdfQ.TkZSV_LoEuXtF77YdhsiqsWkolZpDE48zqS6sOYWa9w
                 </code>
               </div>
             </div>

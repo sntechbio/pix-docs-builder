@@ -180,6 +180,7 @@ export const endpoints: Endpoint[] = [
                 totalParcelas: 3,
                 juros: 1.0,
                 multa: 2.0,
+                cpfCnpj: "40.185.524/0001-04",
                 tipoMulta: "PERCENTUAL",
                 frequenciaCobranca: "MENSAL",
               },
