@@ -15,8 +15,8 @@ export const ApiDocHeader = () => {
               <Code2 className="h-6 w-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">API Documentation</h1>
-              <p className="text-xs text-muted-foreground">LC PAY - PIX API v1</p>
+              <h1 className="text-xl font-bold tracking-tight">API Doc</h1>
+              <p className="text-xs text-muted-foreground">LC PAY - PIX v1.5.1</p>
             </div>
           </div>
 
