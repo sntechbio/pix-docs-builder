@@ -358,7 +358,7 @@ export const endpoints: Endpoint[] = [
     method: "POST",
     path: "https://api.exemplo.com/webhook",
     description:
-      "Exemplo de notificação de pagamento PIX enviada para o endpoint de webhook configurado.",
+      "Exemplo de notificação de pagamento PIX enviada para o endpoint de webhook informado na solicitação de pagamento.",
     category: "Webhooks",
     parameters: [
       {
